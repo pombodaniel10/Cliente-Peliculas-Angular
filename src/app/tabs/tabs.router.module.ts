@@ -8,42 +8,51 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
+        path: 'home',
         children: [
           {
             path: '',
-            loadChildren: '../tab1/tab1.module#Tab1PageModule'
+            loadChildren: '../home/home.module#HomePageModule'
           }
         ]
       },
       {
-        path: 'tab2',
+        path: 'add',
         children: [
           {
             path: '',
-            loadChildren: '../tab2/tab2.module#Tab2PageModule'
+            loadChildren: '../add/add.module#AddPageModule'
           }
         ]
       },
       {
-        path: 'tab3',
+        path: 'edit/:id',
         children: [
           {
             path: '',
-            loadChildren: '../tab3/tab3.module#Tab3PageModule'
+            loadChildren: '../edit/edit.module#EditPageModule'
+          }
+        ]
+      },
+      {
+        path: 'details/:id',
+        children: [
+          {
+            path: '',
+            loadChildren: '../details/details.module#DetailsPageModule'
           }
         ]
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/home',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/home',
     pathMatch: 'full'
   }
 ];

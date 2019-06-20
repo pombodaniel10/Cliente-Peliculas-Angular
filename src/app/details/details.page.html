@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Detalles</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{pelicula.titulo}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <p>Fecha de lanzamiento:</p>
+        <p>{{pelicula.fechaLanzamiento | date}}</p>
+      </ion-item>
+      <ion-item>
+        <p>Genero:</p>
+        <p>{{pelicula.genero}}</p>
+      </ion-item>
+      <ion-item>
+        <p>Precio:</p>
+        <p>{{pelicula.precio | currency}}</p>
+      </ion-item>
+      <ion-button type="button" shape="round" color="primary" expand="block" href="/tabs/edit/{{pelicula._id}}">Editar</ion-button>
+      <ion-button type="button" shape="round" color="danger" expand="block" (click)="eliminar(pelicula._id)">Eliminar</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

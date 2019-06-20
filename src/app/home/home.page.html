@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let p of peliculas" routerLink="/tabs/details/{{p._id}}">
+        <ion-icon name="film" slot="start"></ion-icon>
+        {{p.titulo}}
+    </ion-item>
+  </ion-list>
+</ion-content>
